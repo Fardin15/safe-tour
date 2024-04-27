@@ -15,7 +15,7 @@ const AddTouristsSpot = () => {
     const description = form.description.value;
     const photo = form.photo.value;
     const cost = form.cost.value;
-    const seasonality = form.seasonality.value;
+    const season = form.season.value;
     const time = form.time.value;
     const visitors = form.visitors.value;
     const name = user.displayName;
@@ -27,12 +27,13 @@ const AddTouristsSpot = () => {
       description,
       photo,
       cost,
-      seasonality,
+      season,
       time,
       visitors,
       name,
       email,
     };
+    console.log(addToSpot);
 
     console.log(addToSpot);
     fetch("http://localhost:5000/addspot", {
@@ -64,7 +65,7 @@ const AddTouristsSpot = () => {
               {/* country  */}
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sm">
-                  Country name
+                  Country Country
                 </label>
                 <select
                   name="country"
@@ -144,18 +145,18 @@ const AddTouristsSpot = () => {
                   className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
-              {/* seasonality */}
+              {/* season  */}
               <div className="col-span-full sm:col-span-2">
-                <label htmlFor="state" className="text-sm">
-                  Seasonality
+                <label htmlFor="firstname" className="text-sm">
+                  Season name
                 </label>
-                <input
-                  name="seasonality"
-                  id="state"
-                  type="text"
-                  placeholder="Seasonality"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
-                />
+                <select name="season" className="select select-bordered w-full">
+                  <option defaultValue={"pick one"}>Pick season</option>
+                  <option value={"Spring"}>Spring</option>
+                  <option value={"Summer"}>Summer</option>
+                  <option value={"Autumn "}>Autumn </option>
+                  <option value={"Winter"}>Winter</option>
+                </select>
               </div>
               {/* travel_time */}
               <div className="col-span-full sm:col-span-1">
