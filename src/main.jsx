@@ -13,6 +13,7 @@ import Error from "./Components/Error";
 import SignUp from "./Components/SignUp";
 import Login from "./Components/Login";
 import List from "./Pages/List";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,14 +32,18 @@ const router = createBrowserRouter([
       {
         path: "/addspot",
         element: (
-          // <ProtectedRoute>
-          <AddTouristsSpot></AddTouristsSpot>
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <AddTouristsSpot></AddTouristsSpot>
+          </ProtectedRoute>
         ),
       },
       {
         path: "/mylist",
-        element: <List></List>,
+        element: (
+          <ProtectedRoute>
+            <List></List>
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/signup",

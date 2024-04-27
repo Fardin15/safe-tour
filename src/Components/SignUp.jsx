@@ -115,7 +115,7 @@ const SignUp = () => {
                   className="absolute top-5 right-4"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                  {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
                 </span>
               </div>
               <label className="label">

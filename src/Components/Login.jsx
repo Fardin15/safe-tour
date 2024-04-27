@@ -21,9 +21,9 @@ const Login = () => {
 
     loginUser(email, password)
       .then((result) => {
-        e.target.reset();
         setUser(result.user);
         alert("logged in successfully");
+        e.target.reset();
       })
       .catch((error) => alert("Please give The right gmail and password"));
   };
