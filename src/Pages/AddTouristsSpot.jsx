@@ -1,4 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+
 const AddTouristsSpot = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
+  console.log(user);
   const handleAddSpot = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -11,9 +18,9 @@ const AddTouristsSpot = () => {
     const seasonality = form.seasonality.value;
     const time = form.time.value;
     const visitors = form.visitors.value;
-    const name = form.name.value;
-    const email = form.email.value;
-    console.log(
+    const name = user.displayName;
+    const email = user.email;
+    const addToSpot = {
       country,
       spot,
       location,
@@ -24,8 +31,21 @@ const AddTouristsSpot = () => {
       time,
       visitors,
       name,
-      email
-    );
+      email,
+    };
+
+    console.log(addToSpot);
+    fetch("http://localhost:5000/addspot", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addToSpot),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
     e.target.reset();
   };
 
@@ -46,13 +66,18 @@ const AddTouristsSpot = () => {
                 <label htmlFor="firstname" className="text-sm">
                   Country name
                 </label>
-                <input
+                <select
                   name="country"
-                  id="firstname"
-                  type="text"
-                  placeholder="Country name"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
-                />
+                  className="select select-bordered w-full"
+                >
+                  <option defaultValue={"pick one"}>Pick one</option>
+                  <option value={"USA"}>USA</option>
+                  <option value={"Canada"}>Canada</option>
+                  <option value={"Brazil"}>Brazil</option>
+                  <option value={"Argentina"}>Argentina</option>
+                  <option value={"Maxico"}>Maxico</option>
+                  <option value={"Peru"}>Peru</option>
+                </select>
               </div>
               {/* tourists_spot_name */}
               <div className="col-span-full sm:col-span-3">
@@ -158,32 +183,7 @@ const AddTouristsSpot = () => {
                   className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
-              {/* Name  */}
-              <div className="col-span-full sm:col-span-3">
-                <label htmlFor="firstname" className="text-sm">
-                  Name
-                </label>
-                <input
-                  name="name"
-                  id="firstname"
-                  type="text"
-                  placeholder="Name"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
-                />
-              </div>
-              {/* Email  */}
-              <div className="col-span-full sm:col-span-3">
-                <label htmlFor="firstname" className="text-sm">
-                  Email
-                </label>
-                <input
-                  name="email"
-                  id="firstname"
-                  type="email"
-                  placeholder="Email"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
-                />
-              </div>
+
               <div className="col-span-full">
                 <button
                   type="submit"

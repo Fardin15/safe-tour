@@ -24,10 +24,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/addspot"),
       },
       {
         path: "/allspot",
         element: <AllTouristsSpot></AllTouristsSpot>,
+        loader: () => fetch("http://localhost:5000/addspot"),
       },
       {
         path: "/addspot",
