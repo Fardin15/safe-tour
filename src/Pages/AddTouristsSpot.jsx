@@ -26,6 +26,7 @@ const AddTouristsSpot = () => {
       name,
       email
     );
+    e.target.reset();
   };
 
   return (

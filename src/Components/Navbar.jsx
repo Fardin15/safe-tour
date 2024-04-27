@@ -226,13 +226,15 @@ const Navbar = () => {
             </NavLink>
           </div>
         ) : (
-          <NavLink to="/login" className="btn mr-4">
-            Login
-          </NavLink>
+          <>
+            <NavLink to="/login" className="btn mr-4">
+              Login
+            </NavLink>
+            <NavLink to="/signup" className="btn">
+              SignUp
+            </NavLink>
+          </>
         )}
-        <NavLink to="/signup" className="btn">
-          SignUp
-        </NavLink>
       </div>
     </div>
   );
