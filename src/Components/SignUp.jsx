@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,17 +18,29 @@ const SignUp = () => {
     const password = e.target.password.value;
 
     if (!/@gmail\.com$/.test(email)) {
-      alert("Please add an valid email!!");
+      Swal.fire({
+        icon: "error",
+        text: "Please add an valid gmail!!",
+      });
       return;
     }
     if (password.length < 6) {
-      alert("Password should be at least 6 characters");
+      Swal.fire({
+        icon: "error",
+        text: "Password should be at least 6 characters",
+      });
       return;
     } else if (!/[A-Z]/.test(password)) {
-      alert("Password should contain at least one uppercase");
+      Swal.fire({
+        icon: "error",
+        text: "Password should contain at least one uppercase",
+      });
       return;
     } else if (!/[a-z]/.test(password)) {
-      alert("Password should contain at least one lowercase");
+      Swal.fire({
+        icon: "error",
+        text: "Password should contain at least one lowercase",
+      });
       return;
     }
 

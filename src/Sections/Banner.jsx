@@ -7,41 +7,40 @@ const Banner = () => {
           data-aos-duration="1000"
           className="text-center font-extrabold text-4xl mb-3 text-wrap"
         >
-          Welcome on Hunting !<span>Hotels</span>
+          Welcome on Tour site of America
         </h1>
         <p
           data-aos="fade-right"
           data-aos-delay="1000"
           className="text-center w-[500px] font-normal text-lg text-wrap"
         >
-          Discover Unparalleled Comfort and Hospitality Indulge in Luxury,
-          Experience Genuine Warmth Book Your Stay Today and Create Lasting
-          Memories
+          Discover the Heartbeat of America: Embark on a Journey of Wonders,
+          from Iconic Landmarks to Hidden Gems. Book Your Adventure Today!
         </p>
       </div>
       <div data-aos="zoom-in" data-aos-delay="1000">
         <div className="carousel w-full rounded-2xl">
           <div id="item1" className="carousel-item w-full h-[400px]">
             <img
-              src="https://i.postimg.cc/DzfCdkrB/image1.jpg"
+              src="https://i.postimg.cc/SKy3Zzh1/sliderimg1.jpg"
               className="w-full"
             />
           </div>
           <div id="item2" className="carousel-item w-full h-[400px]">
             <img
-              src="https://i.postimg.cc/SxSLHLnK/image2.jpg"
+              src="https://i.postimg.cc/Bt9w2jpg/sliderimg2.jpg"
               className="w-full"
             />
           </div>
           <div id="item3" className="carousel-item w-full h-[400px]">
             <img
-              src="https://i.postimg.cc/PqcmLB2L/image3.jpg"
+              src="https://i.postimg.cc/hGZnT0d1/sliderimg3.jpg"
               className="w-full"
             />
           </div>
           <div id="item4" className="carousel-item w-full h-[400px]">
             <img
-              src="https://i.postimg.cc/mkWCj7xB/image4.jpg"
+              src="https://i.postimg.cc/4drTFNwK/slidrerimg4.jpg"
               className="w-full"
             />
           </div>

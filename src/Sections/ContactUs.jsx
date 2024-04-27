@@ -18,7 +18,7 @@ const ContactUs = () => {
             Address:{" "}
           </p>
           <p data-aos="fade-left" data-aos-delay="1200">
-            HuntingHotels
+            SafeTour
           </p>
           <p data-aos="fade-left" data-aos-delay="1400">
             123 Main Street{" "}
@@ -43,7 +43,7 @@ const ContactUs = () => {
             General Inquiries: +1 (555) 123-4567
           </p>
           <p data-aos="fade-left" data-aos-delay="2400">
-            Reservations: +1 (555) 987-6543
+            Managers: +1 (555) 987-6543
           </p>
         </div>
       </div>
@@ -58,13 +58,13 @@ const ContactUs = () => {
         <p data-aos="fade-right" data-aos-delay="2800">
           General Inquiries:{" "}
           <a className="text-blue-500 underline" href="">
-            info@huntunghotels.com
+            info@safetour.com
           </a>{" "}
         </p>
         <p data-aos="fade-right" data-aos-delay="3000">
-          Reservations:{" "}
+          Managers:{" "}
           <a className="text-blue-500 underline" href="">
-            reservations@huntunghotels.com
+            manager@safetour.com
           </a>{" "}
         </p>
       </div>
@@ -75,7 +75,7 @@ const ContactUs = () => {
       >
         For room reservations, please contact our reservations team at{" "}
         <a className="text-blue-500 underline" href="">
-          reservations@hospitalitysite.com
+          reservations@safetour.com
         </a>{" "}
         or call us at +1 (555) 123-4567.
       </p>

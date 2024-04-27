@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle, FaFacebook } from "react-icons/fa";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { user, setUser, loginUser, googleSignIn, facebookSignIn } =
@@ -25,7 +26,12 @@ const Login = () => {
         alert("logged in successfully");
         e.target.reset();
       })
-      .catch((error) => alert("Please give The right gmail and password"));
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          text: "Please give The right gmail and password",
+        });
+      });
   };
 
   const handleGoogleSignIn = () => {
