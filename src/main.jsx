@@ -15,6 +15,7 @@ import Login from "./Components/Login";
 import List from "./Pages/List";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import Details from "./Pages/Details";
+import Update from "./Pages/Update";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <List></List>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/update",
+        element: (
+          <ProtectedRoute>
+            <Update></Update>
           </ProtectedRoute>
         ),
       },

@@ -92,6 +92,36 @@ const Navbar = () => {
                 Add Tourists Spot
               </NavLink>
             </li>
+            {/* my list */}
+            <li>
+              <NavLink
+                to="/mylist"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border border-[#23BE0A] text-[#23BE0A]"
+                    : "text-[#131313CC]"
+                }
+              >
+                My List
+              </NavLink>
+            </li>
+            {/* Update */}
+            <li>
+              <NavLink
+                to="/update"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? ""
+                    : isActive
+                    ? "border border-[#23BE0A] text-[#23BE0A]"
+                    : "text-[#131313CC]"
+                }
+              >
+                Update
+              </NavLink>
+            </li>
           </ul>
         </div>
         <h1 className="text-3xl font-bold">SafeTour</h1>
@@ -156,6 +186,21 @@ const Navbar = () => {
               }
             >
               My list
+            </NavLink>
+          </li>
+          {/* Update */}
+          <li>
+            <NavLink
+              to="/update"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? ""
+                  : isActive
+                  ? "px-4 py-2 border border-[#23BE0A] text-[#23BE0A] font-semibold text-lg mr-4 rounded-lg"
+                  : "px-4 py-2 font-normal text-lg text-[#131313CC]"
+              }
+            >
+              Update
             </NavLink>
           </li>
         </ul>

@@ -1,12 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
-const AddTouristsSpot = () => {
+const Update = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
-
-  console.log(user);
-  const handleAddSpot = (e) => {
+  const handleUpdateSpot = (e) => {
     e.preventDefault();
     const form = e.target;
     const country = form.country.value;
@@ -20,7 +17,7 @@ const AddTouristsSpot = () => {
     const visitors = form.visitors.value;
     const name = user.displayName;
     const email = user.email;
-    const addToSpot = {
+    const updatedSpot = {
       country,
       spot,
       location,
@@ -33,29 +30,14 @@ const AddTouristsSpot = () => {
       name,
       email,
     };
-    console.log(addToSpot);
-
-    console.log(addToSpot);
-    fetch("http://localhost:5000/addspot", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addToSpot),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-    e.target.reset();
+    console.log(updatedSpot);
   };
-
   return (
     <div>
-      <p className="font-bold text-lg text-center mt-10">Add Your Spots</p>
+      <p className="font-bold text-lg text-center mt-10">Update Your Spots</p>
       <section className="p-6">
         <form
-          onSubmit={handleAddSpot}
+          onSubmit={handleUpdateSpot}
           noValidate=""
           action=""
           className="container flex flex-col mx-auto space-y-12"
@@ -190,7 +172,7 @@ const AddTouristsSpot = () => {
                   type="submit"
                   className="btn btn-block rounded-full bg-gray-600 py-2 px-8 text-white transition "
                 >
-                  Add
+                  Update
                 </button>
               </div>
             </div>
@@ -202,4 +184,4 @@ const AddTouristsSpot = () => {
   );
 };
 
-export default AddTouristsSpot;
+export default Update;
