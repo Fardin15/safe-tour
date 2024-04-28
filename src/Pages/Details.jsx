@@ -3,7 +3,6 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Details = () => {
   const spot = useLoaderData();
-  console.log(spot);
 
   const {
     spot: spotname,
@@ -19,7 +18,7 @@ const Details = () => {
   } = spot;
 
   return (
-    <div>
+    <div className="bg-green-200 py-6">
       <h1 className="text-center mb-10 mt-6 text-3xl font-semibold">
         Details of: <span>{spotname}</span>
       </h1>

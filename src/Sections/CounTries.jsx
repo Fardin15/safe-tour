@@ -1,6 +1,6 @@
 const CounTries = () => {
   return (
-    <div>
+    <div className="">
       <h1>countries</h1>
     </div>
   );

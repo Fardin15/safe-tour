@@ -52,7 +52,7 @@ const Login = () => {
   }, [user]);
 
   return (
-    <div className="hero bg-green-200">
+    <div className="hero bg-green-200 mt-14">
       {/* <Helmet>
         <title>Login At Hunting Hotels</title>
       </Helmet> */}

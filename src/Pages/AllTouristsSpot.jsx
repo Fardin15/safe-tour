@@ -21,7 +21,7 @@ const AllTouristsSpot = () => {
   };
 
   return (
-    <div className="mt-10 bg-green-300 px-5 rounded-2xl py-6">
+    <div className="mt-14 bg-green-300 px-5 rounded-2xl py-6">
       <h1 className="text-center text-3xl font-bold">All Tourists Spot</h1>
 
       {/* sorting btn */}

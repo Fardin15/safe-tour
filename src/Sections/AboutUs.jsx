@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="w-[700px] mx-auto mt-[80px] bg-green-300 rounded-3xl px-[100px] py-[40px]">
+    <div className="sm:w-full md:w-[700px] mx-auto mt-[80px] bg-green-300 rounded-3xl px-[100px] py-[40px] text-center">
       <h1
         data-aos="fade-down"
         data-aos-duration="1000"
