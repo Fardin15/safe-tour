@@ -140,8 +140,8 @@ const AddTouristsSpot = () => {
                 <input
                   name="cost"
                   id="city"
-                  type="text"
-                  placeholder="Average Cost"
+                  type="number"
+                  placeholder="Give Cost only in number"
                   className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>

@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const SingleSpotCard = ({ spot }) => {
   console.log(spot);
   const {
@@ -16,34 +18,35 @@ const SingleSpotCard = ({ spot }) => {
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure>
-        <img
-          // src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          src={photo}
-          alt="Shoes"
-        />
+        <img className="w-[350px] h-[230px]" src={photo} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="text-center text-xl font-medium mb-3">{spotname}</h2>
 
         <p className=" text-base font-normal mb-3">
-          <span className="font-semibold">Average Cost :</span> {cost}
+          <span className="font-semibold">Average Cost : </span> {cost}
         </p>
         <p className=" text-base font-normal mb-3">
-          <span className="font-semibold">Total Visitors Per Year :</span>{" "}
+          <span className="font-semibold">Total Visitors Per Year : </span>
           {visitors}
         </p>
 
         <p className=" text-base font-normal mb-3">
-          <span className="font-semibold">Travel Time :</span>
+          <span className="font-semibold">Travel Time : </span>
+          {time}
         </p>
         <p className=" text-base font-normal mb-3">
-          <span className="font-semibold">Season :</span>
+          <span className="font-semibold">Season : </span>
+          {season}
         </p>
 
         <div className="card-actions">
-          <button className="btn btn-block btn-primary text-lg font-medium">
+          <NavLink
+            to="/details"
+            className="btn btn-block btn-primary text-lg font-medium"
+          >
             View Details
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>
