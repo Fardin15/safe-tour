@@ -43,7 +43,7 @@ const SingleSpotCard = ({ spot }) => {
         <div className="card-actions">
           <NavLink
             to="/details"
-            className="btn btn-block btn-primary text-lg font-medium"
+            className="btn btn-block bg-gray-500 text-white text-lg font-medium"
           >
             View Details
           </NavLink>
