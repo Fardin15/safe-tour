@@ -1,16 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Update = () => {
   const { user } = useContext(AuthContext);
 
-  const spot = useLoaderData();
-  console.log(spot);
-
   const {
+    _id,
     country,
-    spot: oldSpot,
+    spot,
     location,
     description,
     photo,
@@ -18,9 +17,8 @@ const Update = () => {
     season,
     time,
     visitors,
-    name,
-    email,
-  } = spot;
+  } = useLoaderData();
+
   const handleUpdateSpot = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -49,6 +47,26 @@ const Update = () => {
       email,
     };
     console.log(updatedSpot);
+
+    fetch(`http://localhost:5000/addspot/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedSpot),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee updated successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
   return (
     <div>
@@ -86,7 +104,7 @@ const Update = () => {
                   Tourist Spot Name
                 </label>
                 <input
-                  defaultValue={oldSpot}
+                  defaultValue={spot}
                   name="spot"
                   id="lastname"
                   type="text"
