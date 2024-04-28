@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const SingleSpotCard = ({ spot }) => {
-  console.log(spot);
   const { _id, spot: spotname, photo, cost, season, time, visitors } = spot;
   return (
     <div className="card bg-base-100 shadow-xl">
