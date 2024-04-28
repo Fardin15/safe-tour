@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
@@ -41,6 +42,10 @@ const AddTouristsSpot = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        Swal.fire({
+          icon: "success",
+          text: "Spot added successfully !",
+        });
       });
     e.target.reset();
   };

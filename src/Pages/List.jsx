@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const List = () => {
   const { user } = useContext(AuthContext);
@@ -16,18 +17,34 @@ const List = () => {
   }, [user]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/addspot/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          console.log("deleted successfully");
-          // remove the user form the ui
-          const remainingUsers = spots.filter((spot) => spot._id !== id);
-          setSpots(remainingUsers);
-        }
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/addspot/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Spot has been deleted.",
+                icon: "success",
+              });
+              // remove the user form the ui
+              const remainingUsers = spots.filter((spot) => spot._id !== id);
+              setSpots(remainingUsers);
+            }
+          });
+      }
+    });
   };
   return (
     <div>
