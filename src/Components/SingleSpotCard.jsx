@@ -1,20 +1,9 @@
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const SingleSpotCard = ({ spot }) => {
   console.log(spot);
-  const {
-    country,
-    spot: spotname,
-    location,
-    description,
-    photo,
-    cost,
-    season,
-    time,
-    visitors,
-    name,
-    email,
-  } = spot;
+  const { _id, spot: spotname, photo, cost, season, time, visitors } = spot;
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure>
@@ -42,7 +31,7 @@ const SingleSpotCard = ({ spot }) => {
 
         <div className="card-actions">
           <NavLink
-            to="/details"
+            to={`/details/${_id}`}
             className="btn btn-block bg-gray-500 text-white text-lg font-medium"
           >
             View Details
@@ -54,3 +43,6 @@ const SingleSpotCard = ({ spot }) => {
 };
 
 export default SingleSpotCard;
+SingleSpotCard.propTypes = {
+  spot: PropTypes.object.isRequired,
+};

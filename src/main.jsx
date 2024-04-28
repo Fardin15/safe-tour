@@ -57,8 +57,9 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
-        path: "/details",
+        path: "/details/:id",
         element: <Details></Details>,
+        loader: () => fetch("http://localhost:5000/addspot"),
       },
     ],
   },
