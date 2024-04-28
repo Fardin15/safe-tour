@@ -1,8 +1,26 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
 const Update = () => {
   const { user } = useContext(AuthContext);
+
+  const spot = useLoaderData();
+  console.log(spot);
+
+  const {
+    country,
+    spot: oldSpot,
+    location,
+    description,
+    photo,
+    cost,
+    season,
+    time,
+    visitors,
+    name,
+    email,
+  } = spot;
   const handleUpdateSpot = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -47,13 +65,13 @@ const Update = () => {
               {/* country  */}
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sm">
-                  Country Country
+                  Country
                 </label>
                 <select
                   name="country"
                   className="select select-bordered w-full"
                 >
-                  <option defaultValue={"pick one"}>Pick one</option>
+                  <option defaultValue={country}>{country}</option>
                   <option value={"USA"}>USA</option>
                   <option value={"Canada"}>Canada</option>
                   <option value={"Brazil"}>Brazil</option>
@@ -68,6 +86,7 @@ const Update = () => {
                   Tourist Spot Name
                 </label>
                 <input
+                  defaultValue={oldSpot}
                   name="spot"
                   id="lastname"
                   type="text"
@@ -81,6 +100,7 @@ const Update = () => {
                   Location
                 </label>
                 <input
+                  defaultValue={location}
                   name="location"
                   id="email"
                   type="text"
@@ -94,6 +114,7 @@ const Update = () => {
                   Short description
                 </label>
                 <input
+                  defaultValue={description}
                   name="description"
                   id="address"
                   type="text"
@@ -107,6 +128,7 @@ const Update = () => {
                   Image URL
                 </label>
                 <input
+                  defaultValue={photo}
                   name="photo"
                   id="city"
                   type="text"
@@ -120,6 +142,7 @@ const Update = () => {
                   Average Cost
                 </label>
                 <input
+                  defaultValue={cost}
                   name="cost"
                   id="city"
                   type="number"
@@ -133,7 +156,7 @@ const Update = () => {
                   Season name
                 </label>
                 <select name="season" className="select select-bordered w-full">
-                  <option defaultValue={"pick one"}>Pick season</option>
+                  <option defaultValue={season}>{season}</option>
                   <option value={"Spring"}>Spring</option>
                   <option value={"Summer"}>Summer</option>
                   <option value={"Autumn "}>Autumn </option>
@@ -146,6 +169,7 @@ const Update = () => {
                   Travel Time
                 </label>
                 <input
+                  defaultValue={time}
                   name="time"
                   id="zip"
                   type="text"
@@ -159,6 +183,7 @@ const Update = () => {
                   Total Visitors Per Year
                 </label>
                 <input
+                  defaultValue={visitors}
                   name="visitors"
                   id="zip"
                   type="text"

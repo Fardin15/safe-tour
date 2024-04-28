@@ -188,21 +188,6 @@ const Navbar = () => {
               My list
             </NavLink>
           </li>
-          {/* Update */}
-          <li>
-            <NavLink
-              to="/update"
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? ""
-                  : isActive
-                  ? "px-4 py-2 border border-[#23BE0A] text-[#23BE0A] font-semibold text-lg mr-4 rounded-lg"
-                  : "px-4 py-2 font-normal text-lg text-[#131313CC]"
-              }
-            >
-              Update
-            </NavLink>
-          </li>
         </ul>
       </div>
       <div className="navbar-end">

@@ -50,12 +50,14 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/update",
+        path: "/update/:id",
         element: (
           <ProtectedRoute>
             <Update></Update>
           </ProtectedRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addspot/${params.id}`),
       },
       {
         path: "/signup",
