@@ -72,7 +72,7 @@ const Update = () => {
                   id="lastname"
                   type="text"
                   placeholder="Tourist Spot Name"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
+                  className="w-full rounded-md text-gray-500 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
               {/* location */}
@@ -85,7 +85,7 @@ const Update = () => {
                   id="email"
                   type="text"
                   placeholder="Location"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
+                  className="w-full rounded-md text-gray-500 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
               {/* short description */}
@@ -98,7 +98,7 @@ const Update = () => {
                   id="address"
                   type="text"
                   placeholder="Short description"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
+                  className="w-full rounded-md text-gray-500 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
               {/* Image URL */}
@@ -111,7 +111,7 @@ const Update = () => {
                   id="city"
                   type="text"
                   placeholder="Image URL"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
+                  className="w-full rounded-md text-gray-500 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
               {/*  average_cost */}
@@ -124,7 +124,7 @@ const Update = () => {
                   id="city"
                   type="number"
                   placeholder="Give Cost only in number"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
+                  className="w-full rounded-md text-gray-500 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
               {/* season  */}
@@ -150,7 +150,7 @@ const Update = () => {
                   id="zip"
                   type="text"
                   placeholder="Travel Time"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
+                  className="w-full rounded-md text-gray-500 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
               {/* totalVisitorsPerYear */}
@@ -163,7 +163,7 @@ const Update = () => {
                   id="zip"
                   type="text"
                   placeholder="Total Visitors Per Year"
-                  className="w-full rounded-md text-gray-900 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
+                  className="w-full rounded-md text-gray-500 dark:text-gray-50   border-gray-700 dark:border-gray-300 py-3 px-4"
                 />
               </div>
 
