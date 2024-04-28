@@ -1,12 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { data } from "autoprefixer";
 import { Link } from "react-router-dom";
 
 const List = () => {
   const { user } = useContext(AuthContext);
   const [spots, setSpots] = useState([]);
-
   const email = user.email;
 
   useEffect(() => {
@@ -16,9 +14,24 @@ const List = () => {
         setSpots(data);
       });
   }, [user]);
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/addspot/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          console.log("deleted successfully");
+          // remove the user form the ui
+          const remainingUsers = spots.filter((spot) => spot._id !== id);
+          setSpots(remainingUsers);
+        }
+      });
+  };
   return (
     <div>
-      <h1>my list{spots.length}</h1>
+      <h1 className="font-bold text-lg text-center mt-10">My List</h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -37,16 +50,18 @@ const List = () => {
             {spots.map((spot, index) => (
               <tr key={spot._id}>
                 <th>{index + 1}</th>
-                <td>Cy Ganderton</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
+                <td>{spot.spot}</td>
+                <td>{spot.country}</td>
+                <td>{spot.season}</td>
                 <td>
                   <Link to={`/update/${spot._id}`} className="btn">
                     Update
                   </Link>
                 </td>
                 <td>
-                  <Link className="btn">Delete</Link>
+                  <Link onClick={() => handleDelete(spot._id)} className="btn">
+                    Delete
+                  </Link>
                 </td>
               </tr>
             ))}
