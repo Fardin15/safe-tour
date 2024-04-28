@@ -48,35 +48,41 @@ const List = () => {
   };
   return (
     <div>
-      <h1 className="font-bold text-lg text-center mt-10">My List</h1>
-      <div className="overflow-x-auto">
+      <h1 className="font-bold text-lg text-center mt-10 mb-10">My List</h1>
+      <div className="overflow-x-auto bg-green-200 rounded-2xl">
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="text-lg">
               <th></th>
               <th>Spot Name</th>
               <th>Country</th>
               <th>Seasonality</th>
-              <th>Update</th>
-              <th>Delete</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {/* row 1 */}
             {spots.map((spot, index) => (
-              <tr key={spot._id}>
+              <tr key={spot._id} className="text-base">
                 <th>{index + 1}</th>
                 <td>{spot.spot}</td>
                 <td>{spot.country}</td>
                 <td>{spot.season}</td>
                 <td>
-                  <Link to={`/update/${spot._id}`} className="btn">
+                  <Link
+                    to={`/update/${spot._id}`}
+                    className="btn bg-gray-500 text-white"
+                  >
                     Update
                   </Link>
                 </td>
                 <td>
-                  <Link onClick={() => handleDelete(spot._id)} className="btn">
+                  <Link
+                    onClick={() => handleDelete(spot._id)}
+                    className="btn bg-red-400 text-white"
+                  >
                     Delete
                   </Link>
                 </td>

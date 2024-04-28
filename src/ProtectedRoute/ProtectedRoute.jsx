@@ -7,7 +7,11 @@ const ProtectedRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
   }
   if (user) {
     return children;

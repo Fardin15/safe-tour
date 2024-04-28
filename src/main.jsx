@@ -69,7 +69,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
+        element: (
+          <ProtectedRoute>
+            <Details></Details>
+          </ProtectedRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/addspot/${params.id}`),
       },
