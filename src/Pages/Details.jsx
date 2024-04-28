@@ -1,10 +1,9 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Details = () => {
-  const spots = useLoaderData();
-  const { id } = useParams();
-  const spot = spots.find((spot) => spot._id === id);
+  const spot = useLoaderData();
+  console.log(spot);
 
   const {
     spot: spotname,
@@ -28,7 +27,7 @@ const Details = () => {
         <div className="card card-compact sm:w-96 md:w-2/3 bg-base-100 shadow-xl">
           <figure>
             <img
-              className="sm:w-[350px] sm:h-[230px] md:w-full md:h-[400px]"
+              className="sm:w-full sm:h-[230px] md:w-full md:h-[400px]"
               src={photo}
               alt="spot photo"
             />

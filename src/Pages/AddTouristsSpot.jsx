@@ -3,9 +3,6 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
-
-  console.log(user);
   const handleAddSpot = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -33,9 +30,7 @@ const AddTouristsSpot = () => {
       name,
       email,
     };
-    console.log(addToSpot);
 
-    console.log(addToSpot);
     fetch("http://localhost:5000/addspot", {
       method: "POST",
       headers: {

@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { signUpUser } = useContext(AuthContext);
+  const { signUpUser, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -46,7 +46,10 @@ const SignUp = () => {
 
     signUpUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        Swal.fire({
+          icon: "success",
+          text: "Sign Up successfully . Now Please Log In !!",
+        });
         if (result.user) {
           updateProfile(result.user, {
             displayName: name,
@@ -54,11 +57,12 @@ const SignUp = () => {
             // photoURL: "https://example.com/jane-q-user/profile.jpg",
           })
             .then(() => {
-              console.log("Updated Profile");
+              console.log("User Updated Successfully");
             })
             .catch();
         }
         e.target.reset();
+        logOut();
         navigate("/login");
       })
       .catch((error) => alert(error.message));

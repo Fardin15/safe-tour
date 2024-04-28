@@ -23,7 +23,10 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         setUser(result.user);
-        alert("logged in successfully");
+        Swal.fire({
+          icon: "success",
+          text: "logged in successfully !!",
+        });
         e.target.reset();
       })
       .catch((error) => {
