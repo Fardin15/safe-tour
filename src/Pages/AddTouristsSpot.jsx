@@ -33,7 +33,7 @@ const AddTouristsSpot = () => {
       email,
     };
 
-    fetch("http://localhost:5000/addspot", {
+    fetch("https://safe-tour-server.vercel.app/addspot", {
       method: "POST",
       headers: {
         "content-type": "application/json",

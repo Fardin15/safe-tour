@@ -38,11 +38,23 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    googleSignIn().then((result) => setUser(result.user));
+    googleSignIn().then((result) => {
+      setUser(result.user);
+      Swal.fire({
+        icon: "success",
+        text: "logged in successfully !!",
+      });
+    });
   };
 
   const handleFacebookSignIn = () => {
-    facebookSignIn().then((result) => setUser(result.user));
+    facebookSignIn().then((result) => {
+      setUser(result.user);
+      Swal.fire({
+        icon: "success",
+        text: "logged in successfully !!",
+      });
+    });
   };
 
   useEffect(() => {

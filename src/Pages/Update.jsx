@@ -48,7 +48,7 @@ const Update = () => {
       email,
     };
 
-    fetch(`http://localhost:5000/addspot/${_id}`, {
+    fetch(`https://safe-tour-server.vercel.app/addspot/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -10,12 +10,12 @@ const List = () => {
   const email = user.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mylist/${email}`)
+    fetch(`https://safe-tour-server.vercel.app/mylist/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setSpots(data);
       });
-  }, [user]);
+  }, []);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -28,7 +28,7 @@ const List = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addspot/${id}`, {
+        fetch(`https://safe-tour-server.vercel.app/addspot/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

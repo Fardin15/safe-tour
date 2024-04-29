@@ -28,12 +28,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/addspot"),
+        loader: () => fetch("https://safe-tour-server.vercel.app/addspot"),
       },
       {
         path: "/allspot",
         element: <AllTouristsSpot></AllTouristsSpot>,
-        loader: () => fetch("http://localhost:5000/addspot"),
+        loader: () => fetch("https://safe-tour-server.vercel.app/addspot"),
       },
       {
         path: "/addspot",
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addspot/${params.id}`),
+          fetch(`https://safe-tour-server.vercel.app/addspot/${params.id}`),
       },
       {
         path: "/signup",
@@ -77,12 +77,12 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addspot/${params.id}`),
+          fetch(`https://safe-tour-server.vercel.app/addspot/${params.id}`),
       },
       {
         path: "/spots/:country",
         element: <AllCountriesSpot></AllCountriesSpot>,
-        loader: () => fetch("http://localhost:5000/addspot"),
+        loader: () => fetch("https://safe-tour-server.vercel.app/addspot"),
       },
     ],
   },
