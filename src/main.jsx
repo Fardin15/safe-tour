@@ -16,6 +16,7 @@ import List from "./Pages/List";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import Details from "./Pages/Details";
 import Update from "./Pages/Update";
+import AllCountriesSpot from "./Components/AllCountriesSpot";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,11 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/addspot/${params.id}`),
+      },
+      {
+        path: "/spots/:country",
+        element: <AllCountriesSpot></AllCountriesSpot>,
+        loader: () => fetch("http://localhost:5000/addspot"),
       },
     ],
   },
