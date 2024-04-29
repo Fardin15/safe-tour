@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const List = () => {
   const { user } = useContext(AuthContext);
@@ -48,6 +49,9 @@ const List = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>My Spots Lists | SafeTour</title>
+      </Helmet>
       <h1 className="font-bold text-lg text-center mt-10 mb-10">My List</h1>
       <div className="overflow-x-auto bg-green-200 rounded-2xl">
         <table className="table">

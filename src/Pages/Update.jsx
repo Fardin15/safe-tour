@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Update = () => {
   const { user } = useContext(AuthContext);
@@ -46,7 +47,6 @@ const Update = () => {
       name,
       email,
     };
-    console.log(updatedSpot);
 
     fetch(`http://localhost:5000/addspot/${_id}`, {
       method: "PUT",
@@ -70,6 +70,9 @@ const Update = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Update Spot | SafeTour</title>
+      </Helmet>
       <p className="font-bold text-lg text-center mt-10">Update Your Spots</p>
       <section className="p-6">
         <form

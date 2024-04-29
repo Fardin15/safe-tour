@@ -5,6 +5,7 @@ import ContactUs from "../Sections/ContactUs";
 import CounTries from "../Sections/CounTries";
 import TouristsSpots from "../Sections/TouristsSpots";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const spots = useLoaderData();
@@ -19,6 +20,9 @@ const Home = () => {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>SafeTour | Home</title>
+      </Helmet>
       <Banner></Banner>
       <AboutUs></AboutUs>
       <ContactUs></ContactUs>

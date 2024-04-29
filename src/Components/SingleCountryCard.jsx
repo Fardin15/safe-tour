@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const SingleCountryCard = ({ c }) => {
-  console.log(c);
   const { country, img, description } = c;
   return (
     <Link to={`/spots/${country}`} className="card bg-base-100 shadow-xl">

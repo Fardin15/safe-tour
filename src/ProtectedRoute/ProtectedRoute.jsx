@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
   const location = useLocation();
   if (loading) {
     return (
-      <div>
+      <div className="max-w-6xl mx-auto text-center">
         <span className="loading loading-ring loading-lg"></span>
       </div>
     );

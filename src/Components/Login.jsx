@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash, FaGoogle, FaFacebook } from "react-icons/fa";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { user, setUser, loginUser, googleSignIn, facebookSignIn } =
@@ -18,7 +19,6 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
 
     loginUser(email, password)
       .then((result) => {
@@ -53,9 +53,9 @@ const Login = () => {
 
   return (
     <div className="hero bg-green-200 mt-14">
-      {/* <Helmet>
-        <title>Login At Hunting Hotels</title>
-      </Helmet> */}
+      <Helmet>
+        <title>Login At SafeTour</title>
+      </Helmet>
       <div className="hero-content flex-col">
         <div className="text-center">
           <h1 className="text-5xl font-bold">Login now!</h1>

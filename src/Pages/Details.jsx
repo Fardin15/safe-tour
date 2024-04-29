@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   const spot = useLoaderData();
@@ -19,6 +20,9 @@ const Details = () => {
 
   return (
     <div className="bg-green-200 py-6">
+      <Helmet>
+        <title>Details of {spotname}</title>
+      </Helmet>
       <h1 className="text-center mb-10 mt-6 text-3xl font-semibold">
         Details of: <span>{spotname}</span>
       </h1>

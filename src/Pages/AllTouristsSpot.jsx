@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import SingleSpotCard from "../Components/SingleSpotCard";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AllTouristsSpot = () => {
   const spots = useLoaderData();
-  console.log(spots);
 
   const [sortSpot, setSortSpot] = useState([]);
 
@@ -22,6 +22,9 @@ const AllTouristsSpot = () => {
 
   return (
     <div className="mt-14 bg-green-300 px-5 rounded-2xl py-6">
+      <Helmet>
+        <title>All Tourists Spots | SafeTour</title>
+      </Helmet>
       <h1 className="text-center text-3xl font-bold">All Tourists Spot</h1>
 
       {/* sorting btn */}

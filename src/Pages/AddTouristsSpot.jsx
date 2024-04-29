@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
@@ -52,6 +53,9 @@ const AddTouristsSpot = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Add Your Spots | SafeTour</title>
+      </Helmet>
       <p className="font-bold text-lg text-center mt-10">Add Your Spots</p>
       <section className="p-6">
         <form
