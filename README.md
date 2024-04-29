@@ -1,8 +1,33 @@
-# React + Vite
+## Site name: Safe Tour
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Site type: Online Tourists Site
 
-Currently, two official plugins are available:
+Live Link: (https://safe-tour-7bec4.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Features and Characteristics :
+
+- Friendly to the users.
+- Maintain security for the industries.
+- User can see what data are sotred in sites.User also can add ,update and delete data as his own
+- Manage The Navbar feiendly to users, so that user can go to the routes using by navbar.
+- Used login and register form for the user to have better experience with the sites.
+
+## Used package
+
+- [Vite](https://vitejs.dev/) - Frontend build tool
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [DaisyUI](https://daisyui.com/) - Tailwind CSS component library
+- [MongoDB](https://www.mongodb.com/) - NoSQL database
+- [AOS](https://michalsnik.github.io/aos/) - Animate On Scroll Library
+- [Firebase](https://firebase.google.com/) - Backend as a Service (BaaS) platform
+
+## Category's : America
+
+## Sub-Category's :
+
+- United States of America
+- Canada
+- Brazil
+- Argentina
+- Mexico
+- Peru
