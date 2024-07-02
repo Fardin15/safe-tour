@@ -6,6 +6,18 @@ Live Link: (https://safe-tour-7bec4.web.app/)
 
 Server GitHub: https://github.com/Fardin15/safe-tour-server
 
+## Cloning the Project
+
+To clone the project, follow these steps:
+
+1. Open your terminal or command line interface.
+2. Navigate to the directory where you want to clone the project.
+3. Run the following command:
+
+   bash
+   
+   ``git clone https://github.com/Fardin15/safe-tour.git``
+
 #### Features and Characteristics :
 
 - Friendly to the users.
